@@ -1,46 +1,32 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 body {
     background-color: blanchedalmond;
-    box-sizing: border-box;
 }
 
 h1 {
     text-align: center;
     margin-top: 5%;
-    font-size: 6vw;
 }
 
 .calculator {
-    width: 40%;
-    height: 100%;
+    width: 70%;
+    max-width: 700px;
     background-color: honeydew;
     margin: 5% auto;
     padding: 5%;
-    border-radius: 5%;
-    border-bottom: solid #bbecbb 30px;
+    border-radius: 15px;
+    border-bottom: solid #bbecbb 1rem;
     box-shadow: 0 0 10px #000000cc;
 }
 
-.calculator table {
-    margin-top: 10%;
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.calculator table td {
-    width: 25%;
-    padding: 2%;
-}
-
-.calculator div{
-    width: 90%;
-    min-height: 3.5vw;
+.calculator div {
     height: auto;
-    border: solid #bbecbb 5px;
+    border: solid #bbecbb 0.3rem;
     padding: 3%;
     text-align: right;
     font-family: "Jacquard 12";
@@ -50,14 +36,29 @@ h1 {
     word-wrap: break-word;
     overflow-wrap: break-word;
     white-space: normal;
-    overflow-y: auto;
+}
+
+.calculator div:empty::before {
+    content: "A";
+    visibility: hidden;
+}
+
+.calculator table {
+    margin: 10% auto 0;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.calculator table td {
+    width: 30%;
+    padding: 0 0 2%;
 }
 
 .calculator table td button {
-    width: 9vw;
+    width: 6vw;
     height: 5vw;
     font-family: Geist Mono;
-    font-size: 2vw;
+    font-size: 3vw;
     border: solid #bbecbb 2px;
     background-color: blanchedalmond;
     cursor: pointer;
@@ -69,4 +70,11 @@ h1 {
 
 .calculator table td button:hover {
     background-color: khaki;
+}
+
+@media (max-width: 1200px) {
+    .calculator table td button {
+        width: 12vw;
+        font-size: 3.7vw;
+    }
 }
